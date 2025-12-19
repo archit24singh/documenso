@@ -31,6 +31,14 @@ async function main() {
   const locale = detect(fromHtmlTag('lang')) || 'en';
 
   await dynamicActivate(locale);
+  // Safely activate i18n with fallback
+  //try {
+  //await dynamicActivate(locale);
+  //} catch (error) {
+  //console.warn('i18n failed, using default locale:', error);
+  // Load i18n with empty messages as fallback
+  //i18n.loadAndActivate({ locale: 'en', messages: {} });
+  //}
 
   startTransition(() => {
     hydrateRoot(

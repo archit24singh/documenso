@@ -40,6 +40,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: ./docker/Dockerfile
           push: true
           # Tags the image as 'latest' and also uses the git commit hash (for versioning)
           tags: |
